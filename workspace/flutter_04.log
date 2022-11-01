@@ -1,0 +1,61 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --start-paused -d web-server --web-server-debug-protocol ws --web-server-debug-backend-protocol ws --web-server-debug-injected-client-protocol ws --web-allow-expose-url --devtools-server-address http://127.0.0.1:9100/ --target lib/main.dart
+
+## exception
+
+StateError: Bad state: Future already completed
+
+```
+#0      _AsyncCompleter.complete (dart:async/future_impl.dart:35:31)
+#1      WebDevFS.connect.<anonymous closure> (package:flutter_tools/src/isolated/devfs_web.dart:702:16)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel master, 3.1.0-0.0.pre.745, on Ubuntu 18.04.6 LTS 5.10.102.1-microsoft-standard-WSL2, locale en_US)
+    • Flutter version 3.1.0-0.0.pre.745 at /home/developer/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision c248854d17 (3 weeks ago), 2022-05-16 23:57:08 -0400
+    • Engine revision fce741dd83
+    • Dart version 2.18.0 (build 2.18.0-120.0.dev)
+    • DevTools version 2.13.1
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 29.0.2)
+    • Android SDK at /home/developer/Android/sdk
+    • Platform android-31, build-tools 29.0.2
+    • ANDROID_SDK_ROOT = /home/developer/Android/sdk
+    • Java binary at: /usr/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_312-8u312-b07-0ubuntu1~18.04-b07)
+    • All Android licenses accepted.
+
+[✗] Chrome - develop for the web (Cannot find Chrome executable at google-chrome)
+    ! Cannot find Chrome. Try setting CHROME_EXECUTABLE to a Chrome executable.
+
+[✗] Linux toolchain - develop for Linux desktop
+    ✗ clang++ is required for Linux development.
+      It is likely available from your distribution (e.g.: apt install clang), or can be downloaded from https://releases.llvm.org/
+    ✗ CMake is required for Linux development.
+      It is likely available from your distribution (e.g.: apt install cmake), or can be downloaded from https://cmake.org/download/
+    ✗ ninja is required for Linux development.
+      It is likely available from your distribution (e.g.: apt install ninja-build), or can be downloaded from https://github.com/ninja-build/ninja/releases
+    ✗ pkg-config is required for Linux development.
+      It is likely available from your distribution (e.g.: apt install pkg-config), or can be downloaded from https://www.freedesktop.org/wiki/Software/pkg-config/
+
+[!] Android Studio (not installed)
+    • Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/linux#android-setup for detailed instructions).
+
+[✓] Connected device (1 available)
+    • Web Server (web) • web-server • web-javascript • Flutter Tools
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+! Doctor found issues in 3 categories.
+```
